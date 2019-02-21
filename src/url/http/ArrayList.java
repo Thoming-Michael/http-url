@@ -12,10 +12,7 @@ package url.http;
 public class ArrayList {
     
     private static void list() {
-        for(int i=0; i < java.util.ArrayList.size(); i++) {
-        System.out.println(java.util.ArrayList.get(i));
 
-        }
     }
         
 }

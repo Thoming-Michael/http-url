@@ -47,8 +47,7 @@ public class HttpURLConnectionExample {
 		http.sendGet();
 		
 		System.out.println("\nSend Http POST request");
-		http.sendPost();
-
+		http.sendPost();              
 	}
 
 	// HTTP GET request
@@ -85,12 +84,24 @@ public class HttpURLConnectionExample {
 		System.out.println(response.toString());
                                              
                 Document doc = Jsoup.parse(response.toString()); 
-                
+
+                //System.out.println(doc);
+   
+                //create an arraylist and insert all values with "td" tags into it
                 ArrayList<Element> rows = doc.select("td");
-                        
-                System.out.println(doc);
+                //output the entire list to the user's view
+                System.out.println(rows);
                 
-                        
+                //create iterator variable to use in counting rows during iteration
+                int i = 0;
+                //create a variable that gets the values tagged as "td" in each row
+                Element link = doc.select("td").get(i);
+                //loop through each row in ROWS, grab the "td" tagged data and 
+                //print it out with the html formatting stripped off
+                for(i = 0; i < rows.size(); i++) {
+                    link = doc.select("td").get(i);
+                    System.out.println(link.html());
+                }                
 	}
 	
 	// HTTP POST request
@@ -132,7 +143,5 @@ public class HttpURLConnectionExample {
 		
 		//print result
 		System.out.println(response.toString());
-
 	}
-
 }
