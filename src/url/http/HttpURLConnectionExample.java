@@ -5,6 +5,10 @@
  */
 package url.http;
 
+/**
+ *
+ * @author mthoming
+ */
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,11 +16,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-
-/**
- *
- * @author mthoming
- */
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -37,18 +36,18 @@ import javax.json.JsonWriter;
 
 public class HttpURLConnectionExample {
 
-	private final String USER_AGENT = "Mozilla/5.0";
+    private final String USER_AGENT = "Mozilla/5.0";
 
-	public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-		HttpURLConnectionExample http = new HttpURLConnectionExample();
+        HttpURLConnectionExample http = new HttpURLConnectionExample();
 
-		System.out.println("Send Http GET request");
-		http.sendGet();
-		
-		System.out.println("\nSend Http POST request");
-		http.sendPost();              
-	}
+        System.out.println("Send Http GET request");
+        http.sendGet();
+
+        System.out.println("\nSend Http POST request");
+        http.sendPost();              
+    }
 
 	// HTTP GET request
 	private void sendGet() throws Exception {
